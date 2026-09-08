@@ -206,7 +206,7 @@ with tab4:
         pronostico = modelo_fit.forecast(horas_test)
 
     elif modelo_elegido == "ARIMA":
-        p = st.slider("p (orden autorregresivo)", 2, 0, 2)
+        p = st.slider("p (orden autorregresivo)", 0, 4, 4)
         d = st.slider("d (diferenciación)", 0, 2, 1)
         q = st.slider("q (orden de media móvil)", 0, 4, 2)
         with st.spinner("Ajustando ARIMA..."):
@@ -221,7 +221,7 @@ with tab4:
         st.markdown("**Parte no estacional** — igual que ARIMA, sobre los rezagos cercanos:")
         col_a, col_b, col_c = st.columns(3)
         with col_a:
-            p = st.slider("p", 2, 0, 2)
+            p = st.slider("p", 0, 3, 2)
         with col_b:
             d = st.slider("d", 0, 2, 0)
         with col_c:
