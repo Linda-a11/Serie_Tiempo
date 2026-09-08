@@ -221,7 +221,7 @@ with tab4:
         st.markdown("**Parte no estacional** — igual que ARIMA, sobre los rezagos cercanos:")
         col_a, col_b, col_c = st.columns(3)
         with col_a:
-            p = st.slider("p", 0, 3, 2)
+            p = st.slider("p", 2, 0, 2)
         with col_b:
             d = st.slider("d", 0, 2, 0)
         with col_c:
@@ -245,7 +245,7 @@ with tab4:
             ).fit(disp=False)
         pronostico = modelo_fit.forecast(horas_test)
 
-        if s != 24:
+        if s != 12:
             st.warning(
                 f"⚠️ Declaraste s={s}, pero el ciclo real del sensor es de 24 horas. "
                 "Observa cómo empeora el error cuando el período estacional no coincide con el real."
