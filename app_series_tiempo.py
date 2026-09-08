@@ -206,7 +206,7 @@ with tab4:
         pronostico = modelo_fit.forecast(horas_test)
 
     elif modelo_elegido == "ARIMA":
-        p = st.slider("p (orden autorregresivo)", 0, 4, 4)
+        p = st.slider("p (orden autorregresivo)", 2, 0, 2)
         d = st.slider("d (diferenciación)", 0, 2, 1)
         q = st.slider("q (orden de media móvil)", 0, 4, 2)
         with st.spinner("Ajustando ARIMA..."):
